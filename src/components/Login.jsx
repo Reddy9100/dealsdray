@@ -15,7 +15,7 @@ const Login = () => {
     
     const bodyData = { text, password };
     console.log(bodyData);
-    setLoading(true); // Set loading to true before making the request
+    setLoading(true); 
 
     try {
       const response = await axios.post("https://dealsdrayclient.onrender.com/login", bodyData);
@@ -81,7 +81,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            disabled={loading} // Disable button when loading
+            disabled={loading} 
             className={`w-full ${loading ? 'bg-gray-400' : 'bg-blue-500'} text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-300`}
           >
             {loading ? 'Loading...' : 'Login'}

@@ -37,7 +37,7 @@ const DashBoard = () => {
     try {
       const response = await axios.get("https://dealsdrayclient.onrender.com/users");
       setUsers(response.data.data);
-      setFilteredEmployee(response.data.data); // Initialize filtered list with all users
+      setFilteredEmployee(response.data.data); 
     } catch (error) {
       console.error("Error fetching users:", error);
     }
@@ -193,7 +193,7 @@ const DashBoard = () => {
   const filterEmployees = (e) => {
     const value = e.target.value.toLowerCase();
     if (!value) {
-      setFilteredEmployee(users); // Reset to full list if search is cleared
+      setFilteredEmployee(users); 
       return;
     }
 
@@ -208,12 +208,12 @@ const DashBoard = () => {
       );
     });
 
-    setFilteredEmployee(filtered); // Update filtered list
+    setFilteredEmployee(filtered); 
   };
 
   return (
     <>
-      {/* Navigation */}
+      
       <Toaster />
       <nav className='h-[10vh] flex w-[100vw] items-center bg-black'>
         <ul className='flex w-[100vw] justify-around items-center text-white'>
@@ -223,7 +223,7 @@ const DashBoard = () => {
         </ul>
       </nav>
 
-      {/* Dashboard Content */}
+      
       <div className='flex flex-col justify-center items-center h-[50vh]'>
         <Link to="/Dashboard"><h1>Welcome To Admin Panel</h1></Link>
         <Button
@@ -256,7 +256,7 @@ const DashBoard = () => {
         />
       </div>
 
-      {/* Ant Design Modal for Form */}
+     
       <Modal
         title={selectedUser ? 'Edit Employee' : 'Create Employee'}
         visible={showModal}
