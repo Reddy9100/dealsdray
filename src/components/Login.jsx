@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true); // Set loading to true before making the request
 
     try {
-      const response = await axios.post("http://localhost:5000/login", bodyData);
+      const response = await axios.post("https://dealsdrayclient.onrender.com/login", bodyData);
       console.log(response.data);
       localStorage.setItem("userName" , text)
       if (response.status === 200) {

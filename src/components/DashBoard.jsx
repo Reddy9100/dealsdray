@@ -35,7 +35,7 @@ const DashBoard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/users");
+      const response = await axios.get("https://dealsdrayclient.onrender.com/users");
       setUsers(response.data.data);
       setFilteredEmployee(response.data.data); // Initialize filtered list with all users
     } catch (error) {
@@ -81,7 +81,7 @@ const DashBoard = () => {
 
     try {
       if (selectedUser) {
-        const response = await axios.put(`http://localhost:5000/employee/${selectedUser._id}`, formDataToSend, {
+        const response = await axios.put(`https://dealsdrayclient.onrender.com/employee/${selectedUser._id}`, formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -89,7 +89,7 @@ const DashBoard = () => {
         toast.success("Employee Updated")
         console.log(response.data);
       } else {
-        const response = await axios.post('http://localhost:5000/employee', formDataToSend, {
+        const response = await axios.post('https://dealsdrayclient.onrender.com/employee', formDataToSend, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -120,7 +120,7 @@ const DashBoard = () => {
 
   const deleteUser = async (selectedUser) => {
     try {
-      await axios.delete(`http://localhost:5000/employee/${selectedUser._id}`);
+      await axios.delete(`https://dealsdrayclient.onrender.com/employee/${selectedUser._id}`);
       toast.success("Employee Removed")
       fetchUsers(); 
     } catch (error) {
