@@ -18,7 +18,7 @@ const Login = () => {
     setLoading(true); 
 
     try {
-      const response = await axios.post("https://dealsdrayclient.onrender.com/login", bodyData);
+      const response = await axios.post("https://dealsdray-client-cyan.vercel.app/login", bodyData);
       console.log(response.data);
       localStorage.setItem("userName" , text)
       if (response.status === 200) {
