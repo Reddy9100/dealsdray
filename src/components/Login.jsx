@@ -52,7 +52,7 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <Toaster />
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div className="bg-white p-8 rounded-lg shadow-md m-6">
        <Link to="/"> <h2 className="text-2xl font-bold mb-6 text-center">Login</h2></Link>
         <form onSubmit={handleLogin}>
           <div className="mb-4">

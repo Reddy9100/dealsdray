@@ -210,7 +210,7 @@ const DashBoard = () => {
 
     setFilteredEmployee(filtered); 
   };
-
+  const HeadCount = users.length
   return (
     <>
       
@@ -236,7 +236,7 @@ const DashBoard = () => {
       </div>
 <div className='flex flex-col justify-center items-center'>
       <h2 className='text-2xl font-bold text-center'>Users List</h2>
-
+      <h2>Employee Count : {HeadCount}</h2>
       <input 
         type='text' 
         id="filter" 
