@@ -94,13 +94,18 @@ const DashBoard = () => {
             'Content-Type': 'multipart/form-data',
           },
         });
-        toast.success("Employee Added")
+       if(response.status ===200){
+        toast.success(response.data.message)
+       }
         console.log(response.data);
       }
       fetchUsers();
       setShowModal(false);
     } catch (error) {
-      console.error('Error submitting form:', error.response?.data || error.message);
+      const errorMessage = error.response?.data?.message || error.message;
+  
+  
+  toast.error(errorMessage);
     }
   };
 
