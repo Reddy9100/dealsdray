@@ -60,13 +60,22 @@ const DashBoard = () => {
   };
 
   const formatDate = (dateString) => {
+    if (!dateString) {
+      return 'Invalid Date';  // Handle null, undefined, or empty string
+    }
+  
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+      return 'Invalid Date';  // Handle invalid date parsing
+    }
+  
     return new Intl.DateTimeFormat('en-GB', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric'
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
     }).format(date);
-}
+  };
+  
 
   const handleCourseChange = (e) => {
     const { value } = e.target;
