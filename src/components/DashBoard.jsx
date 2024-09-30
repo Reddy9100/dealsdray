@@ -59,6 +59,15 @@ const DashBoard = () => {
     }
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: 'long',
+        year: 'numeric'
+    }).format(date);
+}
+
   const handleCourseChange = (e) => {
     const { value } = e.target;
     setFormData({ ...formData, course: value });
@@ -97,7 +106,9 @@ const DashBoard = () => {
        if(response.status ===200){
         toast.success(response.data.message)
        }
+       
         console.log(response.data);
+        formatDate(response.data.createdAt)
       }
       fetchUsers();
       setShowModal(false);
@@ -170,6 +181,12 @@ const DashBoard = () => {
     {
       title: 'Gender',
       dataIndex: 'gender',
+    },
+    {
+      title: 'Created At',
+      dataIndex: 'createdAt',
+      key: 'createdAt',
+      render: (createdAt) => formatDate(createdAt),
     },
     {
       title: 'Actions',
